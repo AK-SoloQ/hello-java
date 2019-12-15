@@ -23,12 +23,4 @@ node {
       junit '**/target/surefire-reports/TEST-*.xml'
       archiveArtifacts 'target/*.jar'
    }
-   stage('déploiement'){
-       // Agent ssh doit être configuré pour l'authentification avec clés (générées par ssh-keygen): http://localhost:8080/job/pipe1/pipeline-syntax/
-       sshagent(['prod-server']) {
-        // sh 'ssh -o StrictHostKeyChecking=no lpi@10.0.2.2 cat /etc/os-release'
-        sh 'scp -o StrictHostKeyChecking=no -r target/*.jar lpi@10.0.2.2:/tmp/'
-
-}
-   }
 }

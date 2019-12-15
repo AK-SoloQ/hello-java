@@ -1,5 +1,5 @@
 class devops{
-	public static main void(Strings[] args){
+	public static void main(String[] args){
 		System.out.println("Bonjour DevOps ...");
 	}
 }
